@@ -1,0 +1,240 @@
+body {
+    font-family: 'Chewy', cursive;
+    color: #F5F5F5; /* Light Text */
+    margin: 0;
+    padding: 0;
+    cursor: url('images/10\ copy.png'), auto; /* Custom cursor */
+    background-image: url('images/Untitled\ design\ \(34\).png');
+    background-size:cover;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1f1f1f60; /* Darker Header Background */
+}
+
+.header-left {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header-center a {
+    margin: 0 10px;
+}
+
+.header-center img {
+    height: 30px;
+    width: 30px;
+}
+
+.header-right img {
+    height: 30px;
+    width: 30px;
+}
+
+.tara-animation {
+    font-size: 48px;
+    text-align: center;
+    margin: 20px 0;
+    animation: popUp 2s infinite;
+    margin-top: 50px;
+}
+
+@keyframes popUp {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-container img {
+    border: 5px solid #333333; /* Dark Border */
+    padding: 10px;
+    width: auto;
+    height: 300px; /* Adjust this height as needed */
+    margin-bottom: 50px;
+}
+
+.cool-text {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0;
+    margin-bottom: 50px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    margin-bottom: 50px;
+}
+
+.live-button, .make-button {
+    font-size: 20px;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(45deg, #222222, #222222); /* Gradient background */
+    color: #FFFFFF; /* White text */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 3D box shadow effect */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effects */
+.live-button:hover, .make-button:hover {
+    background: linear-gradient(45deg, #222222, #222222); /* Reverse gradient on hover */
+    transform: scale(1.05); /* Slight enlargement on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4); /* Deeper shadow on hover */
+}
+
+/* Active (Click) Ripple Effect */
+.live-button:active, .make-button:active {
+    background: #222222; /* Slight color change on click */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4); /* Reduced shadow */
+    transform: scale(0.98); /* Slight shrink on click */
+}
+
+/* Ripple effect on click */
+.live-button::before, .make-button::before {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3); /* Light ripple color */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+}
+
+.live-button:active::before, .make-button:active::before {
+    transform: translate(-50%, -50%) scale(1); /* Grow the ripple effect */
+    transition: transform 0.5s ease;
+}
+
+
+.image-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 20px;
+    scroll-snap-type: x mandatory; /* Optional: enables snap scrolling */
+}
+
+.scroll-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Hide scrollbar but keep scroll functionality */
+.image-scroll {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    padding: 20px;
+    gap: 10px;
+    flex-grow: 1;
+    /* Hide the scrollbar */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+}
+
+.image-scroll::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+
+
+.scroll-item {
+    flex: 0 0 auto;
+    width: 500px;
+}
+
+.scroll-item img {
+    width: 100%;
+    border: 2px solid #333;
+    padding: 5px;
+}
+
+.scroll-left, .scroll-right {
+    background-color: #333;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    z-index: 1;
+}
+
+.scroll-left {
+    left: 0;
+}
+
+.scroll-right {
+    right: 0;
+}
+
+.scroll-left:hover, .scroll-right:hover {
+    background-color: #555;
+}
+
+.divinomics-section {
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 0px;
+}
+
+.section-title {
+    font-size: 36px;
+    color: #F5F5F5;
+    margin-bottom: 20px;
+}
+
+.tokenomics-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tokenomics-item {
+    padding: 50px;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #333333; /* Border added for separation */
+}
+
+.tokenomics-item img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.tokenomics-item h3 {
+    font-size: 24px;
+    color: #F5F5F5;
+    margin-bottom: 10px;
+}
+
+.tokenomics-item p {
+    font-size: 18px;
+    color: #F5F5F5;
+}
+
